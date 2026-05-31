@@ -1,26 +1,248 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --navy: #0a1628;
+  --navy-mid: #0f2044;
+  --navy-light: #1a3a6e;
+  --gold: #c9a227;
+  --gold-light: #f0c84a;
+  --gold-dark: #a07c14;
+  --white: #ffffff;
+  --gray-100: #f5f7fa;
+  --gray-200: #e8edf5;
+  --gray-600: #6b7280;
+  --text-dark: #0a1628;
+  --text-muted: #4b5563;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), "Inter", system-ui, sans-serif;
+  background: var(--white);
+  color: var(--text-dark);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Scrollbar ─────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--navy); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+/* ── Typography helpers ─────────────────── */
+.section-label {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--navy);
+}
+
+.section-title.light { color: var(--white); }
+
+.section-desc {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+/* ── Buttons ──────────────────────────── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: var(--navy);
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 20px rgba(201, 162, 39, 0.35);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(201, 162, 39, 0.5);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 2px solid var(--white);
+  color: var(--white);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.7rem 1.75rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background: var(--white);
+  color: var(--navy);
+}
+
+.btn-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #25d366;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.65rem 1.4rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.btn-wa:hover {
+  background: #1ebe5c;
+  transform: translateY(-1px);
+}
+
+/* ── Cards ──────────────────────────── */
+.fleet-card {
+  background: var(--white);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(10, 22, 40, 0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid var(--gray-200);
+}
+
+.fleet-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(10, 22, 40, 0.15);
+}
+
+.hover-card {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.hover-card:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 16px 40px rgba(10,22,40,0.13) !important;
+}
+
+.footer-link {
+  transition: color 0.2s;
+}
+
+.footer-link:hover {
+  color: var(--gold-light) !important;
+}
+
+.social-link {
+  transition: color 0.2s;
+}
+
+.social-link:hover {
+  color: var(--gold-light) !important;
+}
+
+.social-link:hover svg {
+  stroke: var(--gold-light) !important;
+  color: var(--gold-light) !important;
+}
+
+/* ── Gradient backgrounds ──────────────── */
+.bg-navy { background-color: var(--navy); }
+.bg-navy-mid { background-color: var(--navy-mid); }
+.bg-gray-light { background-color: var(--gray-100); }
+
+.gradient-hero {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 60%, #0d3b7a 100%);
+}
+
+.gradient-cta {
+  background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 100%);
+}
+
+.gold-text {
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Floating WhatsApp ─────────────────── */
+.float-wa {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 9999px;
+  background: #25d366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 24px rgba(37, 211, 102, 0.5);
+  transition: transform 0.2s, box-shadow 0.2s;
+  animation: pulse-wa 2.5s infinite;
+}
+
+.float-wa:hover {
+  transform: scale(1.12);
+  box-shadow: 0 10px 32px rgba(37, 211, 102, 0.65);
+}
+
+@keyframes pulse-wa {
+  0%, 100% { box-shadow: 0 6px 24px rgba(37, 211, 102, 0.5); }
+  50% { box-shadow: 0 6px 36px rgba(37, 211, 102, 0.85), 0 0 0 10px rgba(37, 211, 102, 0.12); }
+}
+
+/* ── Utilities ──────────────────────────── */
+.container {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+section { padding: 5rem 0; }
+
+.text-center { text-align: center; }
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+
+@media (max-width: 1024px) {
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr; }
+  section { padding: 3.5rem 0; }
+  .float-wa { bottom: 1.25rem; right: 1.25rem; }
 }
