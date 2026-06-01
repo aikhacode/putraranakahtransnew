@@ -28,6 +28,17 @@ const services = [
 export default function HomePage() {
   return (
     <>
+      {/* ── TOP FULLSCREEN IMAGE ── */}
+      <section style={{ width: "100%", height: "calc(100vh - 70px)", position: "relative", marginTop: "70px" }}>
+        <Image
+          src="/images/putraranakah.png"
+          alt="Armada Putra Ranakah Trans"
+          fill
+          style={{ objectFit: "cover", objectPosition: "center" }}
+          priority
+        />
+      </section>
+
       {/* ── HERO ── */}
       <section style={{
         minHeight: "100vh",
@@ -114,9 +125,9 @@ export default function HomePage() {
               >
                 {/* Tour Image Header */}
                 <div style={{ position: "relative", width: "100%", height: "185px", overflow: "hidden" }}>
-                  <Image 
-                    src={tour.image} 
-                    alt={tour.title} 
+                  <Image
+                    src={tour.image}
+                    alt={tour.title}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 25vw"
                     style={{ objectFit: "cover" }}

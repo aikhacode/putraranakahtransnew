@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { MessageCircle, Phone, Award, Users, Clock, Shield } from "lucide-react";
 import { siteData } from "@/lib/siteData";
 
@@ -46,13 +47,21 @@ export default function TentangKamiPage() {
       <section>
         <div className="container">
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "center" }}>
-            {/* Icon panel */}
+            {/* Image panel */}
             <div style={{
-              background: "linear-gradient(135deg, var(--navy), var(--navy-light))",
               borderRadius: "2rem", height: "380px",
-              display: "flex", alignItems: "center", justifyContent: "center",
-              fontSize: "7rem"
-            }}>✦</div>
+              position: "relative",
+              overflow: "hidden",
+              boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
+            }}>
+              <Image 
+                src="/images/putraranakah.png"
+                alt="Armada Putra Ranakah"
+                fill
+                style={{ objectFit: "cover" }}
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
             <div>
               <div className="section-label">Kisah Kami</div>
               <h2 className="section-title" style={{ marginBottom: "1.25rem" }}>Berawal dari Satu Armada, Kini Melayani Ribuan Perjalanan</h2>

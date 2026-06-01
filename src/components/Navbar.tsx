@@ -35,11 +35,8 @@ export default function Navbar() {
         right: 0,
         zIndex: 999,
         transition: "background 0.3s, box-shadow 0.3s",
-        background: scrolled
-          ? "rgba(10,22,40,0.97)"
-          : "linear-gradient(to bottom, rgba(10,22,40,0.9), transparent)",
-        boxShadow: scrolled ? "0 2px 20px rgba(0,0,0,0.4)" : "none",
-        backdropFilter: scrolled ? "blur(12px)" : "none",
+        background: "#0a1628",
+        boxShadow: "0 2px 20px rgba(0,0,0,0.2)",
       }}
     >
       <div className="container" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", height: "70px" }}>
