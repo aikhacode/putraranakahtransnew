@@ -89,6 +89,7 @@ const jsonLd = {
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "Sewa Toyota Innova Reborn Madiun" } },
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "Sewa Toyota Avanza Madiun" } },
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "Sewa Hiace Premio Madiun" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Sewa Toyota Hiace Premio Luxury Madiun" } },
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "Sewa Bus Pariwisata Madiun" } },
     ],
   },

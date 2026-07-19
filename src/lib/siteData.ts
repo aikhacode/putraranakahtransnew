@@ -29,7 +29,7 @@ export const fleetData = [
     seats: 7,
     ac: true,
     image: "/images/reborn.png",
-    price: "Rp 450.000",
+    price: "Rp 700.000",
     pricePeriod: "/ hari",
     description:
       "Sedan MPV premium keluarga, nyaman untuk perjalanan jauh. Dilengkapi AC double blower & audio sistem modern.",
@@ -44,7 +44,7 @@ export const fleetData = [
     seats: 7,
     ac: true,
     image: "/images/avanza.png",
-    price: "Rp 350.000",
+    price: "Rp 450.000",
     pricePeriod: "/ hari",
     description:
       "Mobil keluarga serbaguna yang hemat dan nyaman. Pilihan terbaik untuk perjalanan harian maupun wisata.",
@@ -59,13 +59,28 @@ export const fleetData = [
     seats: 15,
     ac: true,
     image: "/images/premio.png",
-    price: "Rp 750.000",
+    price: "Rp 1.300.000",
     pricePeriod: "/ hari",
     description:
       "Solusi ideal untuk perjalanan grup besar. Kapasitas 15 penumpang dengan kenyamanan premium dan ruang bagasi ekstra.",
     features: ["15 Kursi", "AC Powerful", "High Roof", "Bagasi Ekstra"],
     waMessage:
       "Halo Putra Ranakah Trans%2C saya ingin menyewa Toyota Hiace Premio. Mohon info ketersediaan dan tarif.",
+  },
+  {
+    id: "hiace-premio-luxury",
+    name: "Toyota Hiace Premio Luxury",
+    slug: "hiace-premio-luxury",
+    seats: 9,
+    ac: true,
+    image: "/images/premio.png",
+    price: "Rp 1.700.000",
+    pricePeriod: "/ hari",
+    description:
+      "Varian premium mewah dari Hiace Premio dengan Captain Seat super nyaman. Sempurna untuk perjalanan VIP, tamu dinas, maupun liburan keluarga berkelas.",
+    features: ["9 Kursi Captain", "AC Powerful", "Kabin Mewah", "Audio Premium"],
+    waMessage:
+      "Halo Putra Ranakah Trans%2C saya ingin menyewa Toyota Hiace Premio Luxury. Mohon info ketersediaan dan tarif.",
   },
   {
     id: "bus-pariwisata",
