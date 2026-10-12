@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { siteData } from "@/lib/siteData";
+import SuspendedPage from "@/components/SuspendedPage";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -97,19 +98,20 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="id" className={inter.variable}>
-      <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-      </head>
-      <body>
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
-        <FloatingWhatsApp />
-      </body>
-    </html>
+    // <html lang="id" className={inter.variable}>
+    //   <head>
+    //     <script
+    //       type="application/ld+json"
+    //       dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    //     />
+    //   </head>
+    //   <body>
+    //     {/* <Navbar /> */}
+    //     {/* <main>{children}</main> */}
+    //     {/* <Footer /> */}
+    //     {/* <FloatingWhatsApp /> */}
+    //   </body>
+    // </html>
+    <SuspendedPage />
   );
 }
